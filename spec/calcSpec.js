@@ -7,7 +7,12 @@ describe("Calculator", function() {
             expect(addition(7, 19)).toBe(26)
         })
         it ("should return an error if we don't supply two numbers", function() {
-            expect(addition("Hitchhikers", "Guide")).toBe("Error!")
+            // takes the window argument because Alert() is a window method
+            spyOn(window, "alert")
+            addition("Hitchhikers", "Guide")
+            // checks if "Error!" was used for calling the function
+            expect(window.alert).toHaveBeenCalledWith("Error!")
+
         })
     })
 })
