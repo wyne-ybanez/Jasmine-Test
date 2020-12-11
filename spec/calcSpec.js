@@ -1,5 +1,12 @@
 describe("Calculator", function() {
 
+    // Create a new instance everytime the function works - to avoid the errors
+    // Set running total back to 0
+    beforeEach(function() {
+        calc = new Calculator;
+    });
+
+    // Create new instance
     var calc = new Calculator;
 
     describe("Addition function", function() {
